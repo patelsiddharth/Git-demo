@@ -1,0 +1,29 @@
+rename file/folder
+	mv {old name} {new name}
+	
+delete file/folder
+	rm -rf {File/Folder name}
+	
+list all files in working directory
+	ls
+	
+list all files/folders in working directory (.files and .folders)
+	ls -al
+	
+command to know current status of files
+	git status 
+	
+command to add one file in staging area
+	git add {file Name}
+	
+command to add multiple files in staging area
+	git add .
+	
+command to commit (this will open default editor set in git preferences where user will have to add commit message)
+	git commit
+
+command to commit and add inline commit message
+	git commit -m "{Commit Message}"
+	
+push files
+	git commit origin {Branch Name}
