@@ -1,8 +1,26 @@
-rename file/folder
+make directory
+	mkdir {Directory name}
+	
+make multiple directory (Will create nested folders)
+	mkdir -p {Name1}/{Name2}/{Name3}
+
+rename file/folder (Bash Command : rename using this command, git will consider 2 operations performed 1 :  Delete from original location and 2 : Added to new location)
 	mv {old name} {new name}
 	
-delete file/folder
+Git rename file/folder
+	git mv {old name} {new name}
+
+Command to move file
+	git mv {file name} {folder name}
+	
+delete file/folder (-r will recursively delete files and -f will force deletion)
 	rm -rf {File/Folder name}
+
+delete untracked file
+	rm {file name}
+
+delete tracked file
+	git rm {file name}	
 	
 list all files in working directory
 	ls
@@ -25,5 +43,46 @@ command to commit (this will open default editor set in git preferences where us
 command to commit and add inline commit message
 	git commit -m "{Commit Message}"
 	
+command to add and commit
+	git commit -am "{Commit Message, a : add to staging area , m : commit message}"
+	
 push files
 	git commit origin {Branch Name}
+	
+Tracked File
+	Any file which git is tracking actively i.e. any file which is already committed to git repository or any file that has been added to git index or staging area. Eg : A newly created file will be untracked file since it is not added to staging area or committed to repository yet. A way to find out if ur file is being tracked by git or not is to use "git ls-files" command
+
+Command to list all files which git is tracking in current repository
+	git ls-files
+	
+command to move files from staging area back to untracked state
+	git reset HEAD {file name}
+	git restore --staged {file name}
+
+command to revert changes
+	git restore {file name}
+	git checkout -- {file name}
+	
+update index
+	git add -u
+	
+Add and update any changes done outside of git to working directory
+	git add -A
+	
+git history 
+	git log
+	
+git shorten commit id history 
+	git log --abbrev-commit
+
+Display log in one line (--oneline : display commit in one line, --graph : provide ascii graph depicting branching, --decorate : add any label or tags)
+	git log --oneline --graph --decorate
+
+Get log between specific commits
+	git log {commit id 1} {commit id 2}
+
+Log based on dates
+	git log --since="3 days ago"
+
+History of specific files
+	git log -- {file name}
