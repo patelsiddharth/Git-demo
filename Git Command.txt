@@ -86,3 +86,24 @@ Log based on dates
 
 History of specific files
 	git log -- {file name}
+	
+Command Alias (This will create an alias for the command within quotes)
+	git config --global alias.hist "log --all --graph --decorate --oneline"
+	
+command to compare file(Use difftool instead of diff to use comparison tool)
+	git diff
+	
+command to compate unstaged and staged file
+	git diff --staged
+	
+compare staged file and file in repository
+	git diff --staged HEAD
+	
+Diff of a specific file
+	git diff -- {file name}
+	
+Diff between commits
+	git diff {commit 1} {commit 2}
+
+Diff between 2 branches
+	git diff {branch 1} {branch 2}
